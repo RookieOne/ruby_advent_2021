@@ -10,13 +10,11 @@ class Day3Part1
     #   "10111"
     # ]
 
-    bit_counts = [
-      {ones: 0, zeroes: 0},
-      {ones: 0, zeroes: 0},
-      {ones: 0, zeroes: 0},
-      {ones: 0, zeroes: 0},
-      {ones: 0, zeroes: 0}
-    ]
+    bit_counts = []
+
+    input[0].length.times do
+      bit_counts << {ones: 0, zeroes: 0}
+    end
 
     input.each do |number|
       number.each_char.with_index do |bit, i|
@@ -36,8 +34,6 @@ class Day3Part1
     #   ...
     # ]
 
-    p bit_counts
-
     bit_counts.map do |bit_count|
       if bit_count[:ones] > bit_count[:zeroes]
         bit_count[:gamma] = "1"
@@ -56,8 +52,6 @@ class Day3Part1
     #   ...
     # ]
 
-    p bit_counts
-
     gamma_bit_string = ""
     epsilon_bit_string = ""
 
@@ -68,9 +62,6 @@ class Day3Part1
 
     # gamma_bit_string 01011
     # epsilon_bit_string 00111
-
-    p gamma_bit_string
-    p epsilon_bit_string
 
     gamma_rate = gamma_bit_string.to_i(2)
     epsilon_rate = epsilon_bit_string.to_i(2)

@@ -20,13 +20,13 @@ RSpec.describe "Day 3 Part 2" do
 
     answer = Day3Part2.get_answer(input)
 
-    # expect(answer[:gamma_bit_string]).to   eq("10110")
-    # expect(answer[:epsilon_bit_string]).to   eq("01001")
+    expect(answer[:oxygeon_rating]).to   eq("10111")
+    expect(answer[:co2_rating]).to   eq("01010")
 
-    # expect(answer[:gamma_rate]).to   eq(22)
-    # expect(answer[:epsilon_rate]).to   eq(9)
+    expect(answer[:oxygeon_number]).to   eq(23)
+    expect(answer[:co2_number]).to   eq(10)
 
-    # expect(answer[:power_consumption]).to   eq(198)
+    expect(answer[:life_support_rating]).to   eq(230)
   end
 
   # it "answer from input should be right" do

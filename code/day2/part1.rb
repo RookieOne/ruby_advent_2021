@@ -1,26 +1,20 @@
 class Day2Part1
   def self.get_answer(input)
-    commands = []
-
-    input.each do |line|
-      words = line.split(" ")
-      commands << {
-        command: words[0],
-        number: words[1].to_i
-      }
-    end
-
     horizontal_position = 0
     depth = 0
 
-    commands.each do |command|
-      case command[:command]
+    input.each do |line|
+      words = line.split(" ")
+      command = words[0]
+      number = words[1].to_i
+
+      case command
       when "forward"
-        horizontal_position += command[:number]
+        horizontal_position += number
       when "up"
-        depth -= command[:number]
+        depth -= number
       when "down"
-        depth += command[:number]
+        depth += number
       end
     end
 

@@ -1,5 +1,3 @@
-require 'pry'
-
 class Day1Problem2
   def initialize(input)
     @depths = create_depths(input)
@@ -7,21 +5,13 @@ class Day1Problem2
 
   def create_depths(input)
     depth_window = []
-    depths = []
-
-    input.each do |current_depth|
-      if depth_window.count < 3
-        depth_window << current_depth
+    depths = input.map.with_index do |current_depth, i|
+      if i > 1
+        input[i-2..i].sum()
       else
-        depths << depth_window.sum()
-
-        depth_window[0] = depth_window[1]
-        depth_window[1] = depth_window[2]
-        depth_window[2] = current_depth
+        nil
       end
-    end
-
-    depths << depth_window.sum()
+    end.compact()
   end
 
   def measure_depth()
